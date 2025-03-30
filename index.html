@@ -1,272 +1,508 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta name="description" content="Em uma noite de tempestade em um bar chamado Clone, histórias de amor e morte começam a surgir.">
-   <meta name="keywords" content="contos sobrenaturais, amor e morte, histórias de terror, literatura brasileira, contos fantásticos">
-   <meta name="author" content="Clarice Duprado">
-   <title>Contos Sobrenaturais de Amor e Morte</title>
-   <style>
-       body, html {
-           margin: 0;
-           padding: 0;
-           height: 100%;
-           overflow: auto;
-           background-color: #0e0e0e;
-       }
-       .container {
-           position: relative;
-           z-index: 2;
-           max-width: 700px;
-           margin: auto;
-           padding: 20px;
-           text-align: justify;
-           color: #fff;
-           font-family: 'Courier New', Courier, monospace;
-       }
-       .poema {
-           margin: 20px 0;
-           background-color: #440303;
-           padding: 10px;
-           border-radius: 5px;
-           box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-       }
 
-       h1, h2 {
-           color: #ff6347;
-           text-align: center;
-       }
-       p {
-           margin: 20px 0;
-       }
-       @media (max-width: 768px) {
-           .container {
-               padding: 10px;
-           }
-       }
-       canvas {
-           position: fixed; /* Posiciona o canvas fixamente */
-           top: 0;
-           left: 0;
-           width: 100%;
-           height: 100%;
-           z-index: 1;
-       }
-   </style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Em uma noite de tempestade em um bar, mentiras e histórias começam a surgir.">
+    <meta name="keywords"
+        content="contos sobrenaturais, amor e morte, histórias de terror, literatura brasileira, contos fantásticos">
+    <meta name="author" content="Clarice Duprado">
+    <title>Contos Sobrenaturais de Amor e Morte</title>
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .creepy-trigger,
+        .blood-trigger,
+        .ghost-trigger {
+            animation: fadeIn 2s ease-in;
+            transition: all 0.5s ease;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=EB+Garamond&display=swap');
+
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: auto;
+            background: linear-gradient(to bottom, #000000, #1a0808);
+            line-height: 1.8;
+            font-size: 18px;
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            margin: auto;
+            padding: 20px;
+            text-align: justify;
+            color: #fff;
+            font-family: 'Crimson Text', Georgia, serif;
+            letter-spacing: 0.2px;
+        }
+
+        .poema {
+            margin: 20px 0;
+            background-color: #1d0101;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        .nav {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 3;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .nav a {
+            color: #ff6347;
+            text-decoration: none;
+            display: block;
+            margin: 5px 0;
+        }
+
+        h1,
+        h2 {
+            font-family: 'EB Garamond', serif;
+            color: #ff6347;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-size: 2.2em;
+            margin: 1.2em 0;
+        }
+
+        p {
+            margin: 20px 0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .nav {
+                position: static;
+                margin-bottom: 20px;
+            }
+        }
+
+        canvas {
+            position: fixed;
+            /* Posiciona o canvas fixamente */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+    </style>
 </head>
+
 <body>
 
-<div class="container">
-    
-    <h1> 1 -A Noite Eterna </h1>
-    <p> No fundo sujo de um bar sujo chamado Clone, no centro da cidade, proximo a boca do lixo, o tempo parecia ter parado. A melancolia se misturava com a fuma&ccedil;a de cigarros vagabundos. L&aacute; fora, uma tempestade de ver&atilde;o castigava cal&ccedil;adas e ruas. O lugar era um ninho para almas perdidas e a casa estava cheia. Em meio a tantos b&ecirc;bados j&aacute; cansados da noite vazia, uma mulher ia levantar a voz. </p>
-    <p> Solange, tinha um olhar envolvente, estava rodeada por pequenos grupos de pessoas, algumas eram estranhas pra ela, outras conhecidas. Sentada, com cara de quem carrega o mundo nas costas mas n&atilde;o se dobra, ela naturalmente atraia olhares curiosos e admirados enquanto a luz amarela do boteco dan&ccedil;ava sobre as mesas, criando sombras que giravam. </p>
-    <p> Seus olhos eram como brasas, encaravam o vazio de quem j&aacute; viu demais, o pior que a vida tem pra dar. A pele negra, marcada pelo tempo, muitas dores e algumas alegrias, por hist&oacute;rias que n&atilde;o encontram espa&ccedil;o nos livros. Mas ela pr&oacute;pria talvez pudesse contar sua historia, n&atilde;o escrever um livro mas compartilhar a mais terr&iacute;vel verdade que queimava dentro dela. </p>
-    <p> &ldquo;Sil&ecirc;ncio colega! Deixem-me contar uma hist&oacute;ria&rdquo;, come&ccedil;ou, enquanto seus olhos de fogo ainda brilhavam com tristeza e fasc&iacute;nio.&nbsp; </p>
-    <p> &ldquo;Um causo real, que me aconteceu bem aqui, nessa cidade, h&aacute; alguns anos, debaixo dessa mesma lua que nos espia agora." Ela fez uma pausa, tomando um gole da pml, para que o &aacute;lcool fortalecesse a coragem de mergulhar em seu passado. Rapidamente a aten&ccedil;&atilde;o das pessoas convergia para ela. </p>
-    <p> Gar&ccedil;om, por favor, encha o caneco! </p>
-    <p> Todas as pessoas na sala fizeram sil&ecirc;ncio </p>
-    <img src="solange.jpg" alt="Solange" width="700">
-    <h1> 2 - Solange </h1>
-    <p> "Ou&ccedil;am bem: Santos, &eacute; a cidade do fanatismo e da perdi&ccedil;&atilde;o " </p>
-    <p> As ruas e becos escondem segredos que, se fossem contados, fariam at&eacute; o crente mais crente desacreditar da f&eacute;. Nem aquela igreja em frente ao mar, supostamente um santu&aacute;rio, escapa da decad&ecirc;ncia. </p>
-    <p> L&aacute;, no quarto do padre mais santo, a blasf&ecirc;mia reina solta. Ele e sua amante, uma mo&ccedil;a de reputa&ccedil;&atilde;o duvidosa como a de voc&ecirc;s. E ali, sobre a cama manchada de pecado, o pequeno Jesus Cristo crucificado assistia, em sil&ecirc;ncio, coisas que at&eacute; Deus duvida. </p>
-    <p> Era em Santos. Uma noite a lua ia bonita passeando pelo c&eacute;u, noite morna de ver&atilde;o. Mas o fedor que subia das &aacute;guas do canal do mercado, frio como a morte, me arrepiava o cangote. A noite estava bonita. Eu passeava s&oacute; nas ruas, AS LUZES SE APAGARAM uma por uma nas casas e nos corti&ccedil;os, eu ainda sentia o cheiro e at&eacute; enxergava a fuma&ccedil;a do crack que algu&eacute;m fumou ali e que subia t&atilde;o alto que obrigava at&eacute; a lua a fumar tamb&eacute;m. Nesse cant&atilde;o da cidade sempre se juntam marginais e pessoas de vida vazia, mas nessa noite n&atilde;o tinha ningu&eacute;m. A lua teve sono e se escondeu atr&aacute;s das nuvens. </p>
-    <img src="fumaça.png" alt="umaça do crack sobia até a lua" width="700" style="filter: grayscale(100%);">
-    <p> De repente, do nada mesmo, uma sombra apareceu numa janela daqueles corti&ccedil;os que parecem ninho de rato. Uma figura jovem, at&eacute; bonita de um jeito meio torto, com o rosto fechado numa tristeza de dar d&oacute;. L&aacute;grimas escorriam, grossas como gotas que se condensam e escorrem nessa garrafa de cerveja gelada na minha frente. Me escorei na cal&ccedil;ada, querendo enxergar melhor. </p>
-    <p> Mas a&iacute;, a figura sumiu, engolida pelo breu. Mas ai do sil&ecirc;ncio, comecei a escutar um som, um canto, sei l&aacute;, mas n&atilde;o era qualquer canto. Era um chorar, um lamento que cortava a alma, um desvario, como se a pr&oacute;pria loucura tivesse voz. Era um som escuro, triste, daqueles que a gente s&oacute; espera ouvir em noite de ventania, um treco que dava arrepio at&eacute; no mais duro. E cada nota que vinha daquela voz, parecia que roubava um peda&ccedil;o da minha paz, e deixava um vazio amargo no lugar. </p>
-    <center><img src="janela.png" alt="Solange" width="300"></center>
-    <p> O canto parou. A figura surgiu na porta do corti&ccedil;o. Lan&ccedil;ou um olhar esperto para a rua. N&atilde;o notou a minha presen&ccedil;a e saiu. Eu n&atilde;o hesitei em seguir. A noite se aprofundava cada vez mais. A lua j&aacute; estava totalmente escondida atr&aacute;s das nuvens e de repente uma chuva desabou em gotas grossas, como uma cascata. Suas gotas pesadas golpearam o meu rosto, como as l&aacute;grimas amargas de dor da crian&ccedil;a &oacute;rf&atilde;, golpeiam o t&uacute;mulo da m&atilde;e morta. </p>
-    <p> Eu segui o som da voz, que me atra&iacute;a igual &iacute;m&atilde;. Eu queria ver melhor o rosto daquela pessoa, que cantava com tanta dor e paix&atilde;o. Eu queria saber o que ela fazia naquele lugar, queria entender o que ela sentia, o que ela sofria, o que ela buscava&hellip; </p>
-    <p> Andamos infinitamente pelo labirinto das ruas do centro: estaria procurando um lugar para comprar drogas? Alguma coisa pra acalmar a alma talvez?... Finalmente a pessoa parou: numa rua larga, escura e vazia. Todo o quarteir&atilde;o era cercado por um muro branco. A chuva parou. Do outro lado do muro eu enxergava cruzes e &aacute;rvores. Se ajoelhou. Parecia estar com solu&ccedil;o, chorava? Mexeu em alguns galhos de um arbusto e entrou por um buraco quase impercept&iacute;vel que havia no muro. </p>
-    <p> Contei at&eacute; trinta e passei tamb&eacute;m. Me enfiei nos arbustos, num buraco que mais parecia um t&uacute;nel dos infernos, cheio de planta, espinho, e coisa que arranha. A passagem era um aperto s&oacute;, me senti no fundo do cu do mundo, parecia que ali tempo se dobrava sobre si mesmo. Cheguei no final, e ao sair do outro lado, o caminho se abriu, a lua apareceu de novo, iluminando as&hellip;&nbsp; </p>
-    <p> Solange de repente&nbsp; interrompe a sua fala&ccedil;&atilde;o, sua respira&ccedil;&atilde;o intensa se fundia com murm&uacute;rio inquieto da audi&ecirc;ncia que a cercava, pendurada em cada palavra. A luz amarela e tremulante do Clone n&atilde;o era suficiente para iluminar seu rosto, enquanto alguns espectadores e espectadoras se inclinavam um pouco mais para frente, tentando capturar as pr&oacute;ximas palavras antes mesmo que elas fossem pronunciadas.&nbsp; </p>
-    <p> Ent&atilde;o Solange, levantou o copo com um movimento tr&ecirc;mulo, mas decidido.Com um gesto r&aacute;pido, ela inclinou o copo e, em um s&oacute; gole, esvaziou-o de uma vez. Solange parecia mais b&ecirc;bada, seus olhos embrasados brilham.&nbsp; </p>
-    <p> Imediatamente o gar&ccedil;om encheu o copo novamente. </p>
-    <p> &ldquo;A lua iluminou sabe o que, gente? As porra das catacumbas e mausol&eacute;us, era um cemit&eacute;rio mesmo&rdquo;, continuou Solange. &ldquo;O canto da pessoa que eu segui ecoava ao fundo e se entrela&ccedil;ava agora com os murm&uacute;rios da noite, criando m&uacute;sica.&rdquo; </p>
-    <p> A NOITE ERA LUZ E SOMBRA E DE FARRA miavam vinte gatos vadios, guardi&otilde;es da escurid&atilde;o, que miavam suas cantorias igual um coral. Choros e gemidos teciam a melodia com o vento, enquanto ossos pareciam com o barulho das folhas secas. As est&aacute;tuas de anjos pousadas nos t&uacute;mulos, dessas que se v&ecirc; nos cemit&eacute;rios, agora deformadas pela noite, mais pareciam com dem&ocirc;nios, seus vultos dan&ccedil;avam uma valsa animada com as sombras. Uma dan&ccedil;a bem diferente. E no meio dessa zorra toda, segurem a onda que o que vou falar agora &eacute; de cair o cu da bunda: Alguns t&uacute;mulos estavam abertos e os cad&aacute;veres dan&ccedil;avam do lado de fora. Era uma festa e no centro dessa festa, e talvez voc&ecirc;s achem que &eacute; papo furado, eu n&atilde;o t&ocirc; nem ai, mas &eacute; papo s&eacute;rio: eu vi a pr&oacute;pria Morte, a filha da puta tava l&aacute;, toda empinada, parecendo regente de orquestra, com um violino de ossos humanos </p>
-    <img src="cemiterio.png" alt="Solange" width="700">
+    <nav class="nav">
+        <a href="#cap1">1 - A Noite Eterna</a>
+        <a href="#cap2">2 - Solange</a>
+        <a href="#interludio">Interlúdio</a>
+    </nav>
 
-    <p> Suas m&atilde;os, t&atilde;o puras quanto a noite, se abriam para mim em uma esp&eacute;cie de convite e tamb&eacute;m uma senten&ccedil;a. Seus olhos vazios encontraram os meus, e em um sussurro que parecia atravessar as eras, pude escutar uma verdade t&atilde;o antiga quanto o tempo: "Solange, eu sou como o carnaval, eu junto ricos e pobres para uma mesma dan&ccedil;a. Mas, enquanto a festa de voc&ecirc;s &eacute; uma mentira que acaba na quarta-feira, minha valsa sombria ecoa pela eternidade." </p>
-    <img src="violino.png" alt="Solange" width="700">
-    <p> A&iacute; eu apaguei. Voltei s&oacute; quando o sol j&aacute; tava todo amarel&atilde;o de papo pro ar, quente pra caralho e o despertar, olha s&oacute; que beleza: foi na base da porrada, com um coveiro desgra&ccedil;ado me chutando e me tratando como se eu fosse um peda&ccedil;o de merda. </p>
-    <p> "Acorda sua b&ecirc;bada imunda!" ele berrava, sacudindo a p&aacute; como se fosse decepar minha cabe&ccedil;a ali mesmo. </p>
-    <p> "Cai fora daqui, sua rata de cemit&eacute;rio, antes que eu te fa&ccedil;a um favor, te mate e enterre ai mesmo!" </p>
-    <p> Minha cabe&ccedil;a ainda tava rodando da viagem da noite, mas alguma coisa dentro de mim acordou pior que bicho ferido. Olhei pra ele calmamente, os olhos mais frios que gelo, e soltei: </p>
-    <p> "Escuta s&oacute;, se voc&ecirc; tentar encostar em mim, quem vai pro buraco &eacute; voc&ecirc;, seu merda. Isso te prometo." Desaquendei minha faca, a m&atilde;o j&aacute; tava no cabo da navalha, pronta pro que desse e viesse. </p>
-    <p> "Vai encarar?" </p>
-    <p> O coveiro engoliu em seco, recuou um passo e baixou a arma dele. Olhei pra tr&aacute;s. Foi a&iacute; que me toquei onde a porra toda tinha acontecido. "Cemit&eacute;rio do Paquet&aacute;", dizia uma placa. </p>
-    <p> Virei de volta pra falar com o babaca uma &uacute;ltima vez, mas s&oacute; vi a p&aacute; dele vindo direto na minha cara. Nem consegui me esquivar, s&oacute; deu tempo de pensar "Ah, fudeu", antes de tudo escurecer de novo. </p>
-    <p> Fui parar no hospital, acordei sei l&aacute; quantos dias depois, cozinhei em febre. Disseram que tive um traumatismo craniano. Por semanas, fiquei fervendo, tendo em del&iacute;rios, e nessas viagens, eu via ela, sempre aquela pessoa, passando e repassando na minha frente, e eu l&aacute;, feito besta, ouvindo solu&ccedil;os que pareciam rasgar minha alma.&nbsp; </p>
-    <p> Depois de um ano, voltei pra Santos. Aquela pessoa l&aacute; n&atilde;o sa&iacute;a da minha cabe&ccedil;a. Nada preenchia o vazio, nem os litros de bebida que eu entornava goela abaixo. N&atilde;o importava se eu tava acordada, dormindo, s&oacute;bria ou de porre, a vis&atilde;o dela sempre vinha... </p>
-    <p> Numa noite, depois de uma farra sem fim, deixei a doutora B&aacute;rbara apagada na cama. Dei uma &uacute;ltima olhada naquela mo&ccedil;a de l&aacute;bios &uacute;midos, que mesmo dormindo ainda parecia gemer. Sa&iacute; vagabundeando pela madrugada com a mente turva. Se a noite tava nublada ou escura, eu n&atilde;o sei. A &uacute;ltima garrafa de Velho Barreiro tinha secado na mesa, e nos seus l&aacute;bios de vicro eu bebi o &uacute;ltimo n&eacute;ctar da cana mais braba. </p>
-    <p> Pisei na areia da praia, seguindo com o olhar o vaiv&eacute;m daquele mar sem fim que, brilhava cor de chumbo. Cruzei a ponte meio sem rumo, e quando dei por mim, tava de cara com uma igreja, grande e bonita. </p>
-    <img src="Igreja.png"Igreja" width="700">
-    <p> O brilho das estrelas iluminavam a pra&ccedil;a que ficava de frente pra igreja. L&aacute; no meio, tinha uma est&aacute;tua que olhava pra mim, era um homem, podia ser um santo. Ele me olhava, era como se me conhecesse, apontando pra porta da igreja, me chamando pra dentro como se fosse uma promessa. Como se tivesse algo pra mim ali. Andei at&eacute; a frente da igreja, a porta, por algum motivo tava s&oacute; encostada, como se esperasse por mim. Meio que no autom&aacute;tico, sem nem pestanejar, segui o dedo do santo e me enfiei igreja adentro. </p>
-    <p> De repente, me vi num sagu&atilde;o escuro, s&oacute; a luz fraca de quatro velas, iluminavam um caix&atilde;o entreaberto. Meti a m&atilde;o e abri a tampa. L&aacute; dentro, uma pessoa morta, inegavelmente morta, embrulhada em prata. Morta ou n&atilde;o, era a pessoa mais linda que j&aacute; vi. Aquele rosto me lembrava uma ideia perdida... era ela! A vis&atilde;o do cemit&eacute;rio. </p>
-    <p> Era como se esperasse por mim. Fechei a porta. Peguei o cad&aacute;ver em meus bra&ccedil;os. Pesava como pedra. Algo acontecia, n&atilde;o sei se no calor do meu peito, ou no fogo do meu desespero, ou no desespero do fogo, aquela pessoa parecia se reanimar. </p>
-    <p> Era um desatino, mas segurando aquele frio nos bra&ccedil;os, senti como se um calor vindo de mim, ou talvez do meu desejo doido, desse um sopro de vida &agrave;quela frieza. No meio da minha insanidade, parecia que ela reagia ao calor do meu peito, ao fogo do meu beijo. </p>
-    <p> De repente ela abriu os olhos, apertou meu bra&ccedil;o e num respiro seus l&aacute;bios azuis ficaram coloridos de novo. Aquela pessoa morta j&aacute; n&atilde;o estava t&atilde;o morta, mas sim desmaiada&hellip; Voc&ecirc; j&aacute; ouviu falar em catalepsia? Um pesadelo horr&iacute;vel, transforma gente acordada de repente em m&uacute;mia. Um sonho gelado que transforma vivo em morto vivo. </p>
-    <p> Ela ia voltando, arranhando o caminho de volta da morte, cada vez que acordava, parecia morrer de novo. Dormia como uma crian&ccedil;a. Ao lado da porta da igreja, percebi algo que n&atilde;o tinha visto antes.&nbsp; </p>
-    <p> Igual um trapo humano estendido no ch&atilde;o, havia um corpo no ch&atilde;o. Esse estava vivo e, roncava igual um porco, afogado na cacha&ccedil;a, com a garrafa de pinga grudada na m&atilde;o como se fosse extens&atilde;o de si, e na outra m&atilde;o fechada uma chave - Olhei pra o rosto e reconheci prontamente, Era o coveiro, o mesmo que um ano antes me tinha me enfiado a p&aacute; na cara, estava um lixo, parecia ter envelhecido uns dez anos. </p>
-    <p> Na sua bebedeira o coveiro devia ter esquecido de trancar a igreja. Essa era a chave da minha felicidade. </p>
-    <p> Por um instante Solange sorri. Bebe um gole de PML e parece achar gra&ccedil;a. Os olhos s&atilde;o fogo puro. </p>
-    <p> &ldquo;Sem medo, nem d&oacute;, nem culpa, deslizei uma vela at&eacute; a cortina e deixei o fogo fazer o servi&ccedil;o, o fogar&eacute;u saiu lambendo o pano como quem n&atilde;o come faz tempo.&rdquo; </p>
-    <p> A chave, arranquei suavemente da m&atilde;o do coveiro que mergulhado na mangua&ccedil;a, nem piscou. Carregando a pessoa que voltou dos mortos, passei pela porta, e tranquei a igreja de fora pra dentro. </p>
-    <p> Andei um bocado, quando j&aacute; tava longe dei uma parada, s&oacute; pra espiar a desgra&ccedil;a completa. O fogo tava devorando a igreja, fazendo um espet&aacute;culo do caralho, as chamas altas pra cacete tingiam at&eacute; o c&eacute;u de laranja. Era como uma festa. A&iacute;, escutei um som que me gelou at&eacute; os ossos, aquele violino da morte come&ccedil;ou a tocar de novo. </p>
-    <p> Em cima da igreja eu via o coveiro, agora mais esp&iacute;rito do que gente, tava ali, dan&ccedil;ando e rindo com sua garrafa de pinga.. O padre com sua amante apareceram tamb&eacute;m, se atiraram naquela dan&ccedil;a dos fodidos, girando num ritmo que fazia t&eacute; a dec&ecirc;ncia se revirar no t&uacute;mulo. Era como se cada passo da dan&ccedil;a fosse um cuspe na cara da vida, o retrato do pecado, num jeito que faria at&eacute; santo parar pra olhar. </p>
-    <p> Do outro lado, eles me mandaram aquele aceno. "Nos vemos em breve", pensei. </p>
-    <p> Eu estava cansada, cada peda&ccedil;o de mim tremendo num misto fudido de medo e canseira. A pessoa viva nos meus bra&ccedil;os pesava mais que nunca. Mas me confortava uma ideia, um ditado desse que dizem por a&iacute;: "Deus s&oacute; te d&aacute; um fardo que tu guenta carregar". </p>
-    <p> "Solange" ser&aacute; que essa hist&oacute;ria n&atilde;o &eacute; um conto n&atilde;o? </p>
-    <p> Pro inferno, &eacute; claro que n&atilde;o. </p>
-    <img src="igreja.jpg" alt="Igreja" width="700">
-   
+    <div class="container">
+
+        <h1> 1 -A Noite Eterna </h1>
+        <p> No fundo sujo de um bar sujo chamado Clone, no centro da cidade, proximo a boca do lixo, o tempo parecia ter
+            parado. A melancolia se misturava com a fuma&ccedil;a de cigarros vagabundos. L&aacute; fora, uma tempestade
+            de ver&atilde;o castigava cal&ccedil;adas e ruas. O lugar era um ninho para almas perdidas e a casa estava
+            cheia. Em meio a tantos b&ecirc;bados j&aacute; cansados da noite vazia, uma mulher ia levantar a voz. </p>
+        <p> Solange, tinha um olhar envolvente, estava rodeada por pequenos grupos de pessoas, algumas eram estranhas
+            pra ela, outras conhecidas. Sentada, com cara de quem carrega o mundo nas costas mas n&atilde;o se dobra,
+            ela naturalmente atraia olhares curiosos e admirados enquanto a luz amarela do boteco dan&ccedil;ava sobre
+            as mesas, criando sombras que giravam. </p>
+        <p> Seus olhos eram como brasas, encaravam o vazio de quem j&aacute; viu demais, o pior que a vida tem pra dar.
+            A pele negra, marcada pelo tempo, muitas dores e algumas alegrias, por hist&oacute;rias que n&atilde;o
+            encontram espa&ccedil;o nos livros. Mas ela pr&oacute;pria talvez pudesse contar sua historia, n&atilde;o
+            escrever um livro mas compartilhar a mais terr&iacute;vel verdade que queimava dentro dela. </p>
+        <p> &ldquo;Sil&ecirc;ncio colega! Deixem-me contar uma hist&oacute;ria&rdquo;, come&ccedil;ou, enquanto seus
+            olhos de fogo ainda brilhavam com tristeza e fasc&iacute;nio.&nbsp; </p>
+        <p> &ldquo;Um causo real, que me aconteceu bem aqui, nessa cidade, h&aacute; alguns anos, debaixo dessa mesma
+            lua que nos espia agora." Ela fez uma pausa, tomando um gole da pml, para que o &aacute;lcool fortalecesse a
+            coragem de mergulhar em seu passado. Rapidamente a aten&ccedil;&atilde;o das pessoas convergia para ela.
+        </p>
+        <p> Gar&ccedil;om, por favor, encha o caneco! </p>
+        <p> Todas as pessoas na sala fizeram sil&ecirc;ncio </p>
+        <img src="solange.jpg" alt="Solange" width="700">
+        <h1> 2 - Solange </h1>
+        <p> "Ou&ccedil;am bem: Santos, &eacute; a cidade do fanatismo e da perdi&ccedil;&atilde;o " </p>
+        <p> As ruas e becos escondem segredos que, se fossem contados, fariam at&eacute; o crente mais crente
+            desacreditar da f&eacute;. Nem aquela igreja em frente ao mar, supostamente um santu&aacute;rio, escapa da
+            decad&ecirc;ncia. </p>
+        <p> L&aacute;, no quarto do padre mais santo, a blasf&ecirc;mia reina solta. Ele e sua amante, uma mo&ccedil;a
+            de reputa&ccedil;&atilde;o duvidosa como a de voc&ecirc;s. E ali, sobre a cama manchada de pecado, o pequeno
+            Jesus Cristo crucificado assistia, em sil&ecirc;ncio, coisas que at&eacute; Deus duvida. </p>
+        <p> Era em Santos. Uma noite a lua ia bonita passeando pelo c&eacute;u, noite morna de ver&atilde;o. Mas o fedor
+            que subia das &aacute;guas do canal do mercado, frio como a morte, me arrepiava o cangote. A noite estava
+            bonita. Eu passeava s&oacute; nas ruas, AS LUZES SE APAGARAM uma por uma nas casas e nos corti&ccedil;os, eu
+            ainda sentia o cheiro e at&eacute; enxergava a fuma&ccedil;a do crack que algu&eacute;m fumou ali e que
+            subia t&atilde;o alto que obrigava at&eacute; a lua a fumar tamb&eacute;m. Nesse cant&atilde;o da cidade
+            sempre se juntam marginais e pessoas de vida vazia, mas nessa noite n&atilde;o tinha ningu&eacute;m. A lua
+            teve sono e se escondeu atr&aacute;s das nuvens. </p>
+        <img src="fumaça.png" alt="umaça do crack sobia até a lua" width="700" style="filter: grayscale(100%);">
+        <p> De repente, do nada mesmo, uma sombra apareceu numa janela daqueles corti&ccedil;os que parecem ninho de
+            rato. Uma figura jovem, at&eacute; bonita de um jeito meio torto, com o rosto fechado numa tristeza de dar
+            d&oacute;. L&aacute;grimas escorriam, grossas como gotas que se condensam e escorrem nessa garrafa de
+            cerveja gelada na minha frente. Me escorei na cal&ccedil;ada, querendo enxergar melhor. </p>
+        <p> Mas a&iacute;, a figura sumiu, engolida pelo breu. Mas ai do sil&ecirc;ncio, comecei a escutar um som, um
+            canto, sei l&aacute;, mas n&atilde;o era qualquer canto. Era um chorar, um lamento que cortava a alma, um
+            desvario, como se a pr&oacute;pria loucura tivesse voz. Era um som escuro, triste, daqueles que a gente
+            s&oacute; espera ouvir em noite de ventania, um treco que dava arrepio at&eacute; no mais duro. E cada nota
+            que vinha daquela voz, parecia que roubava um peda&ccedil;o da minha paz, e deixava um vazio amargo no
+            lugar. </p>
+        <center><img src="janela.png" alt="Solange" width="300"></center>
+        <p> O canto parou. A figura surgiu na porta do corti&ccedil;o. Lan&ccedil;ou um olhar esperto para a rua.
+            N&atilde;o notou a minha presen&ccedil;a e saiu. Eu n&atilde;o hesitei em seguir. A noite se aprofundava
+            cada vez mais. A lua j&aacute; estava totalmente escondida atr&aacute;s das nuvens e de repente uma chuva
+            desabou em gotas grossas, como uma cascata. Suas gotas pesadas golpearam o meu rosto, como as
+            l&aacute;grimas amargas de dor da crian&ccedil;a &oacute;rf&atilde;, golpeiam o t&uacute;mulo da m&atilde;e
+            morta. </p>
+        <p> Eu segui o som da voz, que me atra&iacute;a igual &iacute;m&atilde;. Eu queria ver melhor o rosto daquela
+            pessoa, que cantava com tanta dor e paix&atilde;o. Eu queria saber o que ela fazia naquele lugar, queria
+            entender o que ela sentia, o que ela sofria, o que ela buscava&hellip; </p>
+        <p> Andamos infinitamente pelo labirinto das ruas do centro: estaria procurando um lugar para comprar drogas?
+            Alguma coisa pra acalmar a alma talvez?... Finalmente a pessoa parou: numa rua larga, escura e vazia. Todo o
+            quarteir&atilde;o era cercado por um muro branco. A chuva parou. Do outro lado do muro eu enxergava cruzes e
+            &aacute;rvores. Se ajoelhou. Parecia estar com solu&ccedil;o, chorava? Mexeu em alguns galhos de um arbusto
+            e entrou por um buraco quase impercept&iacute;vel que havia no muro. </p>
+        <p> Contei at&eacute; trinta e passei tamb&eacute;m. Me enfiei nos arbustos, num buraco que mais parecia um
+            t&uacute;nel dos infernos, cheio de planta, espinho, e coisa que arranha. A passagem era um aperto
+            s&oacute;, me senti no fundo do cu do mundo, parecia que ali tempo se dobrava sobre si mesmo. Cheguei no
+            final, e ao sair do outro lado, o caminho se abriu, a lua apareceu de novo, iluminando as&hellip;&nbsp; </p>
+        <p> Solange de repente&nbsp; interrompe a sua fala&ccedil;&atilde;o, sua respira&ccedil;&atilde;o intensa se
+            fundia com murm&uacute;rio inquieto da audi&ecirc;ncia que a cercava, pendurada em cada palavra. A luz
+            amarela e tremulante do Clone n&atilde;o era suficiente para iluminar seu rosto, enquanto alguns
+            espectadores e espectadoras se inclinavam um pouco mais para frente, tentando capturar as pr&oacute;ximas
+            palavras antes mesmo que elas fossem pronunciadas.&nbsp; </p>
+        <p> Ent&atilde;o Solange, levantou o copo com um movimento tr&ecirc;mulo, mas decidido.Com um gesto
+            r&aacute;pido, ela inclinou o copo e, em um s&oacute; gole, esvaziou-o de uma vez. Solange parecia mais
+            b&ecirc;bada, seus olhos embrasados brilham.&nbsp; </p>
+        <p> Imediatamente o gar&ccedil;om encheu o copo novamente. </p>
+        <p> &ldquo;A lua iluminou sabe o que, gente? As porra das catacumbas e mausol&eacute;us, era um cemit&eacute;rio
+            mesmo&rdquo;, continuou Solange. &ldquo;O canto da pessoa que eu segui ecoava ao fundo e se
+            entrela&ccedil;ava agora com os murm&uacute;rios da noite, criando m&uacute;sica.&rdquo; </p>
+        <p> A NOITE ERA LUZ E SOMBRA E DE FARRA miavam vinte gatos vadios, guardi&otilde;es da escurid&atilde;o, que
+            miavam suas cantorias igual um coral. Choros e gemidos teciam a melodia com o vento, enquanto ossos pareciam
+            com o barulho das folhas secas. As est&aacute;tuas de anjos pousadas nos t&uacute;mulos, dessas que se
+            v&ecirc; nos cemit&eacute;rios, agora deformadas pela noite, mais pareciam com dem&ocirc;nios, seus vultos
+            dan&ccedil;avam uma valsa animada com as sombras. Uma dan&ccedil;a bem diferente. E no meio dessa zorra
+            toda, segurem a onda que o que vou falar agora &eacute; de cair o cu da bunda: Alguns t&uacute;mulos estavam
+            abertos e os cad&aacute;veres dan&ccedil;avam do lado de fora. Era uma festa e no centro dessa festa, e
+            talvez voc&ecirc;s achem que &eacute; papo furado, eu n&atilde;o t&ocirc; nem ai, mas &eacute; papo
+            s&eacute;rio: eu vi a pr&oacute;pria Morte, a filha da puta tava l&aacute;, toda empinada, parecendo regente
+            de orquestra, com um violino de ossos humanos </p>
+        <img src="cemiterio.png" alt="Solange" width="700">
+
+        <p> Suas m&atilde;os, t&atilde;o puras quanto a noite, se abriam para mim em uma esp&eacute;cie de convite e
+            tamb&eacute;m uma senten&ccedil;a. Seus olhos vazios encontraram os meus, e em um sussurro que parecia
+            atravessar as eras, pude escutar uma verdade t&atilde;o antiga quanto o tempo: "Solange, eu sou como o
+            carnaval, eu junto ricos e pobres para uma mesma dan&ccedil;a. Mas, enquanto a festa de voc&ecirc;s &eacute;
+            uma mentira que acaba na quarta-feira, minha valsa sombria ecoa pela eternidade." </p>
+        <img src="violino.png" alt="Solange" width="700">
+        <p> A&iacute; eu apaguei. Voltei s&oacute; quando o sol j&aacute; tava todo amarel&atilde;o de papo pro ar,
+            quente pra caralho e o despertar, olha s&oacute; que beleza: foi na base da porrada, com um coveiro
+            desgra&ccedil;ado me chutando e me tratando como se eu fosse um peda&ccedil;o de merda. </p>
+        <p> "Acorda sua b&ecirc;bada imunda!" ele berrava, sacudindo a p&aacute; como se fosse decepar minha
+            cabe&ccedil;a ali mesmo. </p>
+        <p> "Cai fora daqui, sua rata de cemit&eacute;rio, antes que eu te fa&ccedil;a um favor, te mate e enterre ai
+            mesmo!" </p>
+        <p> Minha cabe&ccedil;a ainda tava rodando da viagem da noite, mas alguma coisa dentro de mim acordou pior que
+            bicho ferido. Olhei pra ele calmamente, os olhos mais frios que gelo, e soltei: </p>
+        <p> "Escuta s&oacute;, se voc&ecirc; tentar encostar em mim, quem vai pro buraco &eacute; voc&ecirc;, seu merda.
+            Isso te prometo." Desaquendei minha faca, a m&atilde;o j&aacute; tava no cabo da navalha, pronta pro que
+            desse e viesse. </p>
+        <p> "Vai encarar?" </p>
+        <p> O coveiro engoliu em seco, recuou um passo e baixou a arma dele. Olhei pra tr&aacute;s. Foi a&iacute; que me
+            toquei onde a porra toda tinha acontecido. "Cemit&eacute;rio do Paquet&aacute;", dizia uma placa. </p>
+        <p> Virei de volta pra falar com o babaca uma &uacute;ltima vez, mas s&oacute; vi a p&aacute; dele vindo direto
+            na minha cara. Nem consegui me esquivar, s&oacute; deu tempo de pensar "Ah, fudeu", antes de tudo escurecer
+            de novo. </p>
+        <p> Fui parar no hospital, acordei sei l&aacute; quantos dias depois, cozinhei em febre. Disseram que tive um
+            traumatismo craniano. Por semanas, fiquei fervendo, tendo em del&iacute;rios, e nessas viagens, eu via ela,
+            sempre aquela pessoa, passando e repassando na minha frente, e eu l&aacute;, feito besta, ouvindo
+            solu&ccedil;os que pareciam rasgar minha alma.&nbsp; </p>
+        <p> Depois de um ano, voltei pra Santos. Aquela pessoa l&aacute; n&atilde;o sa&iacute;a da minha cabe&ccedil;a.
+            Nada preenchia o vazio, nem os litros de bebida que eu entornava goela abaixo. N&atilde;o importava se eu
+            tava acordada, dormindo, s&oacute;bria ou de porre, a vis&atilde;o dela sempre vinha... </p>
+        <p> Numa noite, depois de uma farra sem fim, deixei a doutora B&aacute;rbara apagada na cama. Dei uma
+            &uacute;ltima olhada naquela mo&ccedil;a de l&aacute;bios &uacute;midos, que mesmo dormindo ainda parecia
+            gemer. Sa&iacute; vagabundeando pela madrugada com a mente turva. Se a noite tava nublada ou escura, eu
+            n&atilde;o sei. A &uacute;ltima garrafa de Velho Barreiro tinha secado na mesa, e nos seus l&aacute;bios de
+            vicro eu bebi o &uacute;ltimo n&eacute;ctar da cana mais braba. </p>
+        <p> Pisei na areia da praia, seguindo com o olhar o vaiv&eacute;m daquele mar sem fim que, brilhava cor de
+            chumbo. Cruzei a ponte meio sem rumo, e quando dei por mim, tava de cara com uma igreja, grande e bonita.
+        </p>
+        <img src="Igreja.png" Igreja" width="700">
+        <p> O brilho das estrelas iluminavam a pra&ccedil;a que ficava de frente pra igreja. L&aacute; no meio, tinha
+            uma est&aacute;tua que olhava pra mim, era um homem, podia ser um santo. Ele me olhava, era como se me
+            conhecesse, apontando pra porta da igreja, me chamando pra dentro como se fosse uma promessa. Como se
+            tivesse algo pra mim ali. Andei at&eacute; a frente da igreja, a porta, por algum motivo tava s&oacute;
+            encostada, como se esperasse por mim. Meio que no autom&aacute;tico, sem nem pestanejar, segui o dedo do
+            santo e me enfiei igreja adentro. </p>
+        <p> De repente, me vi num sagu&atilde;o escuro, s&oacute; a luz fraca de quatro velas, iluminavam um
+            caix&atilde;o entreaberto. Meti a m&atilde;o e abri a tampa. L&aacute; dentro, uma pessoa morta,
+            inegavelmente morta, embrulhada em prata. Morta ou n&atilde;o, era a pessoa mais linda que j&aacute; vi.
+            Aquele rosto me lembrava uma ideia perdida... era ela! A vis&atilde;o do cemit&eacute;rio. </p>
+        <p> Era como se esperasse por mim. Fechei a porta. Peguei o cad&aacute;ver em meus bra&ccedil;os. Pesava como
+            pedra. Algo acontecia, n&atilde;o sei se no calor do meu peito, ou no fogo do meu desespero, ou no desespero
+            do fogo, aquela pessoa parecia se reanimar. </p>
+        <p> Era um desatino, mas segurando aquele frio nos bra&ccedil;os, senti como se um calor vindo de mim, ou talvez
+            do meu desejo doido, desse um sopro de vida &agrave;quela frieza. No meio da minha insanidade, parecia que
+            ela reagia ao calor do meu peito, ao fogo do meu beijo. </p>
+        <p> De repente ela abriu os olhos, apertou meu bra&ccedil;o e num respiro seus l&aacute;bios azuis ficaram
+            coloridos de novo. Aquela pessoa morta j&aacute; n&atilde;o estava t&atilde;o morta, mas sim
+            desmaiada&hellip; Voc&ecirc; j&aacute; ouviu falar em catalepsia? Um pesadelo horr&iacute;vel, transforma
+            gente acordada de repente em m&uacute;mia. Um sonho gelado que transforma vivo em morto vivo. </p>
+        <p> Ela ia voltando, arranhando o caminho de volta da morte, cada vez que acordava, parecia morrer de novo.
+            Dormia como uma crian&ccedil;a. Ao lado da porta da igreja, percebi algo que n&atilde;o tinha visto
+            antes.&nbsp; </p>
+        <p> Igual um trapo humano estendido no ch&atilde;o, havia um corpo no ch&atilde;o. Esse estava vivo e, roncava
+            igual um porco, afogado na cacha&ccedil;a, com a garrafa de pinga grudada na m&atilde;o como se fosse
+            extens&atilde;o de si, e na outra m&atilde;o fechada uma chave - Olhei pra o rosto e reconheci prontamente,
+            Era o coveiro, o mesmo que um ano antes me tinha me enfiado a p&aacute; na cara, estava um lixo, parecia ter
+            envelhecido uns dez anos. </p>
+        <p> Na sua bebedeira o coveiro devia ter esquecido de trancar a igreja. Essa era a chave da minha felicidade.
+        </p>
+        <p> Por um instante Solange sorri. Bebe um gole de PML e parece achar gra&ccedil;a. Os olhos s&atilde;o fogo
+            puro. </p>
+        <p> &ldquo;Sem medo, nem d&oacute;, nem culpa, deslizei uma vela at&eacute; a cortina e deixei o fogo fazer o
+            servi&ccedil;o, o fogar&eacute;u saiu lambendo o pano como quem n&atilde;o come faz tempo.&rdquo; </p>
+        <p> A chave, arranquei suavemente da m&atilde;o do coveiro que mergulhado na mangua&ccedil;a, nem piscou.
+            Carregando a pessoa que voltou dos mortos, passei pela porta, e tranquei a igreja de fora pra dentro. </p>
+        <p> Andei um bocado, quando j&aacute; tava longe dei uma parada, s&oacute; pra espiar a desgra&ccedil;a
+            completa. O fogo tava devorando a igreja, fazendo um espet&aacute;culo do caralho, as chamas altas pra
+            cacete tingiam at&eacute; o c&eacute;u de laranja. Era como uma festa. A&iacute;, escutei um som que me
+            gelou at&eacute; os ossos, aquele violino da morte come&ccedil;ou a tocar de novo. </p>
+        <p> Em cima da igreja eu via o coveiro, agora mais esp&iacute;rito do que gente, tava ali, dan&ccedil;ando e
+            rindo com sua garrafa de pinga.. O padre com sua amante apareceram tamb&eacute;m, se atiraram naquela
+            dan&ccedil;a dos fodidos, girando num ritmo que fazia t&eacute; a dec&ecirc;ncia se revirar no
+            t&uacute;mulo. Era como se cada passo da dan&ccedil;a fosse um cuspe na cara da vida, o retrato do pecado,
+            num jeito que faria at&eacute; santo parar pra olhar. </p>
+        <p> Do outro lado, eles me mandaram aquele aceno. "Nos vemos em breve", pensei. </p>
+        <p> Eu estava cansada, cada peda&ccedil;o de mim tremendo num misto fudido de medo e canseira. A pessoa viva nos
+            meus bra&ccedil;os pesava mais que nunca. Mas me confortava uma ideia, um ditado desse que dizem por
+            a&iacute;: "Deus s&oacute; te d&aacute; um fardo que tu guenta carregar". </p>
+        <p> "Solange" ser&aacute; que essa hist&oacute;ria n&atilde;o &eacute; um conto n&atilde;o? </p>
+        <p> Pro inferno, &eacute; claro que n&atilde;o. </p>
+        <img src="igreja.jpg" alt="Igreja" width="700">
 
 
-   <script type="module">
-      import * as THREE from "https://esm.sh/three";
+
+        <script type="module">
+            import * as THREE from "https://esm.sh/three";
+
+            // Create intersection observer
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Add creepy effect when specific paragraphs are visible
+                        if (entry.target.classList.contains('creepy-trigger')) {
+                            scene.fog = new THREE.FogExp2(0x000000, 0.001);
+                            smokeParticles.forEach(particle => {
+                                particle.material.color.setHex(0xff0000);
+                            });
+                        }
+                        // Add blood effect for violent scenes
+                        if (entry.target.classList.contains('blood-trigger')) {
+                            scene.background = new THREE.Color("#440303");
+                            smokeParticles.forEach(particle => {
+                                particle.material.color.setHex(0x800000);
+                            });
+                        }
+                        // Add ghost effect for supernatural scenes
+                        if (entry.target.classList.contains('ghost-trigger')) {
+                            scene.fog = new THREE.FogExp2(0xcccccc, 0.002);
+                            smokeParticles.forEach(particle => {
+                                particle.material.color.setHex(0xffffff);
+                                particle.material.opacity = 0.3;
+                            });
+                        }
+                    }
+                });
+            });
+
+            // Add triggers to specific paragraphs
+            document.querySelectorAll('p').forEach((p, index) => {
+                if (index === 4) p.classList.add('creepy-trigger');
+                if (index === 12) p.classList.add('blood-trigger');
+                if (index === 20) p.classList.add('ghost-trigger');
+                observer.observe(p);
+            });
 
 
 
 
-const clock = new THREE.Clock();
-const raycaster = new THREE.Raycaster();
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(
- 75,
- innerWidth / innerHeight,
- 1,
- 10000
-);
+            const clock = new THREE.Clock();
+            const raycaster = new THREE.Raycaster();
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(
+                75,
+                innerWidth / innerHeight,
+                1,
+                10000
+            );
 
 
-const renderer = new THREE.WebGLRenderer();
-renderer.setSize(innerWidth, innerHeight);
+            const renderer = new THREE.WebGLRenderer();
+            renderer.setSize(innerWidth, innerHeight);
 
 
-const light = new THREE.DirectionalLight(0xffffff, 1);
-light.position.set(-1, 0, 1);
+            const light = new THREE.DirectionalLight(0xffffff, 1);
+            light.position.set(-1, 0, 1);
 
 
-scene.add(light);
-camera.position.z = 1000;
-scene.add(camera);
-scene.background = new THREE.Color("#0e0e0e");
+            scene.add(light);
+            camera.position.z = 1000;
+            scene.add(camera);
+            scene.background = new THREE.Color("#0e0e0e");
 
 
-const geometry = new THREE.BoxGeometry(200, 200, 200);
-const material = new THREE.MeshLambertMaterial({
- color: new THREE.Color("rgb(255, 255, 255)"),
- wireframe: false
-});
-
-
-
-
-let cubeSineDriver = 0;
-
-
-THREE.ImageUtils.crossOrigin = "";
-
-
-const smokeTexture = new THREE.TextureLoader().load(
- "https://s3-us-west-2.amazonaws.com/s.cdpn.io/95637/Smoke-Element.png"
-);
-const smokeMaterial = new THREE.MeshLambertMaterial({
- color: new THREE.Color("rgb(70, 70, 60)"),
- map: smokeTexture,
- transparent: true
-});
-const smokeGeo = new THREE.PlaneGeometry(300, 300);
-const smokeParticles = [];
-
-
-for (let p = 0; p < 100; p++) {
- const particle = new THREE.Mesh(smokeGeo, smokeMaterial);
- particle.position.set(
-   Math.random() * 500 - 250,
-   Math.random() * 500 - 250,
-   Math.random() * 1000 - 100
- );
- particle.rotation.z = Math.random() * 360;
- scene.add(particle);
- smokeParticles.push(particle);
-}
-
-
-function animate() {
- requestAnimationFrame(animate);
- evolveSmoke();
- render();
-}
-
-
-function evolveSmoke() {
- let sp = smokeParticles.length;
- const delta = clock.getDelta();
- while (sp--) {
-   smokeParticles[sp].rotation.z += delta * 0.1;
- }
-}
-
-
-function render() {
-
-
- cubeSineDriver += 0.01;
- renderer.render(scene, camera);
-}
-
-
-animate();
-
-
-document.body.appendChild(renderer.domElement);
+            const geometry = new THREE.BoxGeometry(200, 200, 200);
+            const material = new THREE.MeshLambertMaterial({
+                color: new THREE.Color("rgb(255, 255, 255)"),
+                wireframe: false
+            });
 
 
 
-   </script>
+
+            let cubeSineDriver = 0;
+
+
+            THREE.ImageUtils.crossOrigin = "";
+
+
+            const smokeTexture = new THREE.TextureLoader().load(
+                "https://s3-us-west-2.amazonaws.com/s.cdpn.io/95637/Smoke-Element.png"
+            );
+            const smokeMaterial = new THREE.MeshLambertMaterial({
+                color: new THREE.Color("rgb(70, 70, 60)"),
+                map: smokeTexture,
+                transparent: true
+            });
+            const smokeGeo = new THREE.PlaneGeometry(300, 300);
+            const smokeParticles = [];
+
+
+            for (let p = 0; p < 50; p++) {
+                const particle = new THREE.Mesh(smokeGeo, smokeMaterial);
+                particle.position.set(
+                    Math.random() * 500 - 250,
+                    Math.random() * 500 - 250,
+                    Math.random() * 1000 - 100
+                );
+                particle.rotation.z = Math.random() * 360;
+                scene.add(particle);
+                smokeParticles.push(particle);
+            }
+
+
+            function animate() {
+                requestAnimationFrame(animate);
+                evolveSmoke();
+                render();
+            }
+
+
+            function evolveSmoke() {
+                let sp = smokeParticles.length;
+                const delta = clock.getDelta();
+                while (sp--) {
+                    smokeParticles[sp].rotation.z += delta * 0.1;
+                }
+            }
+
+
+            function render() {
+
+
+                cubeSineDriver += 0.01;
+                renderer.render(scene, camera);
+            }
+
+
+            animate();
+
+
+            document.body.appendChild(renderer.domElement);
+
+
+
+        </script>
 </body>
+
 </html>
 <div class="poema">
-    <center><h1>Interlúdio:<br> Danse Macabre - Henri Cazalis</h1>
+    <center>
+        <h1>Interlúdio:<br> Danse Macabre - Henri Cazalis</h1>
         <audio controls>
-            <source src="https://archive.org/download/DanseMacabreOp.40/Danse%20Macabre%2C%20Op.%2040.mp3" type="audio/mpeg">
+            <source src="https://archive.org/download/DanseMacabreOp.40/Danse%20Macabre%2C%20Op.%2040.mp3"
+                type="audio/mpeg">
             Seu navegador não suporta o elemento de áudio.
-        </audio> 
-    <p>Zigue e zague e zigue, a morte chama em ritmo,<br>
-        Batendo em um túmulo com seu calcanhar,<br>
-        A morte à meia-noite toca uma melodia de dança,<br>
-        Zigue e zague e zigue, em seu violino.</p>
-        
+        </audio>
+        <p>Zigue e zague e zigue, a morte chama em ritmo,<br>
+            Batendo em um túmulo com seu calcanhar,<br>
+            A morte à meia-noite toca uma melodia de dança,<br>
+            Zigue e zague e zigue, em seu violino.</p>
+
         <p>O vento de inverno sopra, e a noite é escura,<br>
-        Lamentos surgem dos tílias;<br>
-        Os esqueletos brancos avançam através das sombras,<br>
-        Correndo e saltando sob seus grandes sudários.</p>
-    
+            Lamentos surgem dos tílias;<br>
+            Os esqueletos brancos avançam através das sombras,<br>
+            Correndo e saltando sob seus grandes sudários.</p>
+
         <p>Zigue e zague e zigue, cada um se agita,<br>
-        Ouve-se o bater dos ossos dos dançarinos,<br>
-        Um casal lascivo senta-se na musgo<br>
-        Como para saborear prazeres antigos.</p>
-    
+            Ouve-se o bater dos ossos dos dançarinos,<br>
+            Um casal lascivo senta-se na musgo<br>
+            Como para saborear prazeres antigos.</p>
+
         <p>Zigue e zague e zigue, a morte continua<br>
-        A raspar sem fim seu instrumento áspero.<br>
-        Um véu caiu! A dançarina está nua!<br>
-        Seu dançarino a abraça amorosamente.</p>
-    
+            A raspar sem fim seu instrumento áspero.<br>
+            Um véu caiu! A dançarina está nua!<br>
+            Seu dançarino a abraça amorosamente.</p>
+
         <p>A dama é, dizem, marquesa ou baronesa.<br>
-        E o jovem galante, um pobre carroceiro—<br>
-        Horror! E eis que ela se entrega<br>
-        Como se o camponês fosse um barão!</p>
-    
+            E o jovem galante, um pobre carroceiro—<br>
+            Horror! E eis que ela se entrega<br>
+            Como se o camponês fosse um barão!</p>
+
         <p>Zigue e zague e zigue, que sarabanda!<br>
-        Que círculos de mortos se dando as mãos!<br>
-        Zigue e zague e zigue, na trupe se vê<br>
-        O rei dançar ao lado do plebeu!</p>
-    
+            Que círculos de mortos se dando as mãos!<br>
+            Zigue e zague e zigue, na trupe se vê<br>
+            O rei dançar ao lado do plebeu!</p>
+
         <p>Mas shh! de repente todos deixam a roda,<br>
-        Empurram-se, fogem, o galo cantou...<br>
-        Oh! Que bela noite para o pobre mundo!<br>
-        E viva a morte e a igualdade!</p></center>  
-    </div>
+            Empurram-se, fogem, o galo cantou...<br>
+            Oh! Que bela noite para o pobre mundo!<br>
+            E viva a morte e a igualdade!</p>
+    </center>
+</div>
